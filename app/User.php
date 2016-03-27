@@ -12,7 +12,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-       /* 'name', */'email', 'password',
+       'name', 'email', 'password',
     ];
 
     /**
@@ -24,11 +24,11 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-//    /**
-//     * Get all of the tasks for the user.
-//     */
-//    public function tasks()
-//    {
-//        return $this->hasMany(Task::class);
-//    }
+    /**
+     * Get all of the tasks for the user.
+     */
+    public function tasks()
+    {
+        return $this->hasMany(Task::class);
+    }
 }

@@ -17,9 +17,10 @@ Route::group(['middleware' => ['web']], function () {
         return view('welcome');
     });
 
-    Route::get('/tasks', 'TaskController@index');
-    Route::post('/task', 'TaskController@store');
-    Route::delete('/task/{task}', 'TaskController@destroy');
+    
+    Route::get('/courses', 'CourseController@index');
+    Route::post('/course', 'CourseController@store');
+    Route::delete('/course/{course}', 'CourseController@destroy');
 
     Route::auth();
 

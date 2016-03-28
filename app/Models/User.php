@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Models;
-
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
@@ -25,10 +24,10 @@ class User extends Authenticatable
     ];
 
     /**
-     * Get all of the tasks for the user.
+     * Get all of the curses for the user.
      */
-    public function tasks()
+    public function curses()
     {
-        return $this->hasMany(Task::class);
+        return $this->hasMany(Course::class);
     }
 }

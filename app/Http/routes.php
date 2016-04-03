@@ -21,7 +21,13 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/courses', 'CourseController@index');
     Route::post('/course', 'CourseController@store');
     Route::delete('/course/{course}', 'CourseController@destroy');
-
+    Route::get('/course/image/{filename}', 'CourseController@image');
+    Route::get('/course/{course}', 'CourseController@detail');
+    Route::put('/course/{course}', 'CourseController@edit');
+    
+    Route::get('/account', 'AccountController@account');
+    Route::put('/account', 'AccountController@edit');
+    
     Route::auth();
 
 });

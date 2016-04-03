@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
 
-    {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
+    <link href="css/app.css" rel="stylesheet">
 
     <style>
         body {
@@ -28,6 +28,9 @@
     </style>
 </head>
 <body id="app-layout">
+    <div class="main-loader" style="display:none;">
+        <div class="loader">Loading...</div>
+    </div>
     <nav class="navbar navbar-default navbar-static-top">
         <div class="container">
             <div class="navbar-header">
@@ -83,6 +86,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="js/validator.min.js"></script> 
-    {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
+    <script src="js/app.js"></script> 
 </body>
 </html>

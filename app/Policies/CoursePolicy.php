@@ -12,9 +12,15 @@ use Illuminate\Auth\Access\HandlesAuthorization;
  * @author pawel
  */
 class CoursePolicy {
+    
     public function destroy(User $user, Course $course)
     {
-var_dump($user->id, $course->getAttributes());
         return $user->id === $course->user_id;
     }
+    
+    public function edit(User $user, Course $course)
+    {
+        return $user->id === $course->user_id;
+    }
+    
 }

@@ -13,7 +13,11 @@
                     <tbody>
                         @foreach ($curses as $curse)
                         <tr>
-                            <td class="table-text"><div>{{ $curse->name }}</div></td>
+                            <td class="table-text">
+                                <div>
+                                    <a href="{{ url('/study/') }}/{{ $curse->id }}">{{ $curse->name }}</a> 
+                                </div>
+                            </td>
 
                             <!-- Task Delete Button -->
                             <td>

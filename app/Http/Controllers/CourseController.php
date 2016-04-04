@@ -6,8 +6,6 @@ use Illuminate\Http\Request;
 use App\Repositories;
 use App\Http\Requests;
 use App\Models\Course;
-use File;
-use Response;
 
 /**
  * @author Pawel Kopec paweelkopec@gmail.com
@@ -113,17 +111,7 @@ class CourseController extends Controller{
 
         return redirect('/courses');
     }
-    
-    public function image(Request $request, $filename){
-        
-        $path = storage_path("courses/") . $filename;
-        $file = File::get($path);
-        $type = File::mimeType($path);
-        $response = Response::make($file, 200);
-        $response->header("Content-Type", $type);
-        return $response;
-    }
-    
+
     public function detail(Request $request, Course $course){
         return view('courses.detail', [
             'course' => $course,

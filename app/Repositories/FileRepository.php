@@ -10,6 +10,11 @@ use App\Models\Course;
  */
 class FileRepository {
     
+    /**
+     * 
+     * @param Course $course
+     * @return \Illuminate\Support\Collection
+     */
     public function forCourse(Course $course){
         
         return \App\Models\File::where('course_id', $course->id)
@@ -17,7 +22,12 @@ class FileRepository {
                     ->get();
         
     }
-    
+    /**
+     * 
+     * @param Course $course
+     * @param array $ids
+     * @return @return \Illuminate\Support\Collection
+     */
     public function forCourseAndIdNotIn(Course $course, array $ids){
         return \App\Models\File::where("course_id", $course->id )
                            ->whereNotIn("id", $ids)

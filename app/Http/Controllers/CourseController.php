@@ -20,8 +20,8 @@ class CourseController extends Controller{
     
     public function __construct(Repositories\CourseRepository $curses){
         $this->middleware('auth');
-        $this->curses= $curses;
-        $this->files = new Repositories\FileRepository();
+        $this->curses = $curses;
+        $this->files  = new Repositories\FileRepository();
     }
     
      /**

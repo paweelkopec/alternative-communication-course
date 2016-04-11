@@ -30,4 +30,13 @@ class User extends Authenticatable
     {
         return $this->hasMany(Course::class);
     }
+    
+    public function isSuperAdmin(){
+        return (int)$this->role_id === 2;
+    }
+    
+    public function countCourses(){
+        $rep = new \App\Repositories\CourseRepository();
+        return $rep->countForUser($this);
+    }
 }

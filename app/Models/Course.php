@@ -32,7 +32,16 @@ class Course extends Model {
      */
     public function user()
     {
-        return $this->belongsTo(User::class);
+        return User::find($this->user_id);
+    }
+    
+    public function category(){
+        return Category::find($this->category_id);
+    }
+    
+    public function countFiles(){
+        $rep = new \App\Repositories\FileRepository();
+        return  $rep->countForCourse($this);
     }
     
 }

@@ -14,6 +14,7 @@ class AuthServiceProvider extends ServiceProvider
      */
     protected $policies = [
         'App\Models\Course' => 'App\Policies\CoursePolicy',
+        'App\Models\User'   => 'App\Policies\UserPolicy',
     ];
 
     /**
@@ -25,7 +26,5 @@ class AuthServiceProvider extends ServiceProvider
     public function boot(GateContract $gate)
     {
         $this->registerPolicies($gate);
-
-        //
     }
 }

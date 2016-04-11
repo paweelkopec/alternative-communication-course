@@ -35,7 +35,7 @@ class AccountController extends Controller {
         $request->user()->email =  $request->email ;
         $request->user()->password = bcrypt($request->password);
         $request->user()->save();
-
+        return redirect('/account');
     }
     
     

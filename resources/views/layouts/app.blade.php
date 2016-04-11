@@ -64,6 +64,22 @@
                     </ul>
                 @endif
                 
+                <ul class="nav navbar-nav">
+                    <!-- Authentication Links -->
+                    @if (!Auth::guest() && Auth::user()->isSuperAdmin())
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                Administracja <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="{{ url('/admin/accounts') }}">Użytkownicy</a></li>
+                                <li><a href="{{ url('/admin/courses') }}">Kursy</a></li>
+                            </ul>
+                        </li>
+                    @endif
+                </ul>
+                
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->

@@ -18,4 +18,9 @@ class CourseRepository {
                     ->orderBy('created_at', 'asc')
                     ->get();
     }
+    
+    public function countForUser(User $user){
+        return \App\Models\Course::where('user_id', $user->id)
+                    ->count();
+    }
 }

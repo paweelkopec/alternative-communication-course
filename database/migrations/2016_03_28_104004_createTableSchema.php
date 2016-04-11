@@ -14,11 +14,12 @@ class CreateTableSchema extends Migration
     {
         $sql = file_get_contents(__DIR__ . '/createTableSchema.sql');
         DB::unprepared($sql);
-        // split the statements, so DB::statement can execute them.
-//        $statements = array_filter(array_map('trim', explode(';', $sql)));
-//        foreach ($statements as $stmt) {
-//            DB::statement($stmt);
-//        }
+        
+        $user = new App\Models\User();
+        $user->role_id =2; // full admin
+        $user->email ='paweelkopec@gmail.com';
+        $user->password = bcrypt('paweelkopec@gmail.com');
+        $user->save();
     }
 
     /**

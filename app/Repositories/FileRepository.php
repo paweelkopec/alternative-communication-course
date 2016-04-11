@@ -33,4 +33,9 @@ class FileRepository {
                            ->whereNotIn("id", $ids)
                            ->get();
     }
+    
+    public function countForCourse(Course $course){
+        return \App\Models\File::where("course_id", $course->id )
+                    ->count();
+    }
 }

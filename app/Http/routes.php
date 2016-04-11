@@ -30,6 +30,11 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/file/{file}', 'StudyController@image');
     Route::get('/study/{course}/test', 'StudyController@test');
     
+    Route::get('/admin/accounts', 'AdminController@accounts');
+    Route::delete('/admin/account/{user}', 'AdminController@destroyUser');
+    
+    Route::get('/admin/courses', 'AdminController@courses');
+    
     Route::auth();
 
 });

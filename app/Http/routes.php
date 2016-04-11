@@ -13,10 +13,7 @@
  
 Route::group(['middleware' => ['web']], function () {
 
-    Route::get('/', function () {
-        return view('welcome');
-    });
-
+    Route::get('/', 'HomeController@index');
     Route::get('/courses', 'CourseController@index');
     Route::post('/course', 'CourseController@store');
     Route::delete('/course/{course}', 'CourseController@destroy');

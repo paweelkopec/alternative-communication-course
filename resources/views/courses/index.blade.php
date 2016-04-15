@@ -8,7 +8,7 @@
         <table class="table table-striped curse-table">
             <thead>
             <th>Nazwa</th>
-            <th>Akcje</th>
+            <th style="width:190px">Akcje</th>
             </thead>
             <tbody>
                 @foreach ($curses as $curse)

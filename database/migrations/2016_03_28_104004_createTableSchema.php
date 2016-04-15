@@ -29,13 +29,11 @@ class CreateTableSchema extends Migration
      */
     public function down()
     {
-        Schema::drop('statistic');
         Schema::drop('files');
         Schema::drop('courses');
         Schema::drop('categories');
         Schema::drop('users');
         Schema::drop('roles');
-        
 
     }
 }

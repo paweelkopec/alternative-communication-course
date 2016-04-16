@@ -12,9 +12,6 @@ class AccountController extends Controller {
     public function __construct() {
         $this->middleware('auth');
     }
-    public function index(Request $request) {
-        
-    }
     
     public function account(Request $request){
         return view('auth.account', [

@@ -18,7 +18,7 @@ class FileRepository {
     public function forCourse(Course $course){
         
         return \App\Models\File::where('course_id', $course->id)
-                    ->orderBy('created_at', 'asc')
+                    ->orderBy('name', 'asc')
                     ->get();
         
     }
